@@ -5,7 +5,12 @@ add_executable(example_exe
  src/main.cpp 
  src/glad.c 
  src/shader.cpp 
- src/shader.h
+ src/VAO.cpp
+ src/VAO.h
+ src/VBO.cpp
+ src/VBO.h
+ src/EBO.cpp
+ src/EBO.h
  )
 
 target_include_directories(example_exe PRIVATE ./Dependencies/include)
