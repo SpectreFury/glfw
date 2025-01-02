@@ -50,10 +50,10 @@ int main()
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
     float vertices[] = {
-        0.5f, 0.5f, 0.0f,   // top right
-        0.5f, -0.5f, 0.0f,  // bottom right
-        -0.5f, -0.5f, 0.0f, // bottom left
-        -0.5f, 0.5f, 0.0f   // top left
+        0.5f, 0.5f, 0.0f, 0.3f, 0.5f, 1.0f,   // top right
+        0.5f, -0.5f, 0.0f, 0.5f, 0.3f, 1.0f,  // bottom right
+        -0.5f, -0.5f, 0.0f, 1.0f, 0.2f, 0.3f, // bottom left
+        -0.5f, 0.5f, 0.0f, 0.5f, 0.5f, 0.5f   // top left
     };
     unsigned int indices[] = {
         // note that we start from 0!
@@ -67,7 +67,8 @@ int main()
     VBO VBO1(vertices, sizeof(vertices));
     EBO EBO1(indices, sizeof(indices));
 
-    VAO1.LinkVBO(VBO1, 0);
+    VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 6 * sizeof(float), (void *)0);
+    VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 6 * sizeof(float), (void *)(3 * sizeof(float)));
 
     VAO1.Unbind();
     VBO1.Unbind();

@@ -1,0 +1,10 @@
+^E:\PROGRAMMING\GLFW\BUILD\CMAKEFILES\1F34BE5F1E491E120FDE46A34C6641F2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/Programming/glfw -BE:/Programming/glfw/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/Programming/glfw/build/glfw.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
